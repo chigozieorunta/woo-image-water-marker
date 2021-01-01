@@ -70,7 +70,7 @@ class WatermarkText {
 		$this->tx_color = $palette->color( '#FFFFFF', 100 );
 		$this->text_box = new Box( 85, 35 );
 
-		// Prepare Text box
+		// Prepare Text box.
 		$font_size  = 20;
 		$font_file  = __DIR__ . '/../fonts/AvertaDemo-Regular.otf';
 		$this->font = new Font( $font_file, $font_size, $this->tx_color );
