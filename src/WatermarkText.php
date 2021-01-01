@@ -1,6 +1,7 @@
 <?php
-
 /**
+ * Watermark Text.
+ *
  * @package WooImageWaterMarker
  */
 
