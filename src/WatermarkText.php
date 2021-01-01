@@ -90,7 +90,7 @@ class WatermarkText {
 		$this->canvas = $imagine->create( $this->text_box, $this->bg_color );
 		$this->canvas->draw()->text( $string, $this->font, new Point( 0, 0 ) );
 
-		// Get top right position of background image
+		// Get top right position of background image.
 		$image_size = $this->image->getSize();
 		$position   = $image_size->getWidth() - 85;
 
