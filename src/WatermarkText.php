@@ -86,7 +86,7 @@ class WatermarkText {
 		// Create Imagine object.
 		$imagine = new Imagine();
 
-		// Draw text on canvas
+		// Draw text on canvas.
 		$this->canvas = $imagine->create( $this->text_box, $this->bg_color );
 		$this->canvas->draw()->text( $string, $this->font, new Point( 0, 0 ) );
 
