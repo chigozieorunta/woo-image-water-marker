@@ -62,7 +62,7 @@ class WatermarkText {
 		// RGB.
 		$palette = new RGB();
 
-		// Get Background Image
+		// Get Background Image.
 		$this->image = $watermark->image;
 
 		// Set colors
