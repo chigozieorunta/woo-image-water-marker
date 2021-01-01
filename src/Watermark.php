@@ -66,7 +66,7 @@ class Watermark {
 	/**
 	 * Return thumbnail watermark
 	 *
-	 * @param string $html
+	 * @param string  $html
 	 * @param integer $id
 	 * @return string
 	 */
@@ -94,20 +94,20 @@ class Watermark {
 		$imagine = new Imagine();
 
 		// Get absolute path...
-		$this->get_image_absolute_path($id);
-		$this->image = $imagine->open($this->path);
+		$this->get_image_absolute_path( $id );
+		$this->image = $imagine->open( $this->path );
 
 		// Get Product SKU
 		global $product;
 		$product_sku = $product->get_sku();
 
 		// Get Watermark logo
-		$logo = new WatermarkLogo($this);
+		$logo = new WatermarkLogo( $this );
 		$logo->centralize();
 
 		// Get Watermark Text
-		$text = new WatermarkText($this);
-		$text->set_text($product_sku);
+		$text = new WatermarkText( $this );
+		$text->set_text( $product_sku );
 
 		// Save final Watermark image
 		$this->image->save( __DIR__ . '/../images/woo-image-water-marker-' . $id . '.jpg' );
