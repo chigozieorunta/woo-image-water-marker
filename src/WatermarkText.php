@@ -56,7 +56,7 @@ class WatermarkText {
 	/**
 	 * Text constructor
 	 *
-	 * @param Watermark $watermark
+	 * @param \Watermark $watermark Watermark instance.
 	 */
 	public function __construct( Watermark $watermark ) {
 		// RGB
