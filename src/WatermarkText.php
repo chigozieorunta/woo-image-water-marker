@@ -14,40 +14,40 @@ use Imagine\Image\Box;
 use Imagine\Image\Point;
 
 /**
- * WatermarkText Class
+ * WatermarkText Class.
  */
 class WatermarkText {
 
 	/**
-	 * Text Font
+	 * Text Font.
 	 *
 	 * @var object
 	 */
 	public $font;
 
 	/**
-	 * Background color
+	 * Background color.
 	 *
 	 * @var string
 	 */
 	public $bg_color;
 
 	/**
-	 * Text color
+	 * Text color.
 	 *
 	 * @var string
 	 */
 	public $tx_color;
 
 	/**
-	 * Text box
+	 * Text box.
 	 *
 	 * @var object
 	 */
 	public $text_box;
 
 	/**
-	 * Image Canvas
+	 * Image Canvas.
 	 *
 	 * @var object
 	 */
