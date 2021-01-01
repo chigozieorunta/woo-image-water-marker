@@ -59,7 +59,7 @@ class WatermarkText {
 	 * @param \Watermark $watermark Watermark instance.
 	 */
 	public function __construct( Watermark $watermark ) {
-		// RGB
+		// RGB.
 		$palette = new RGB();
 
 		// Get Background Image
