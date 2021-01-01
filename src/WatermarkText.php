@@ -79,7 +79,7 @@ class WatermarkText {
 	/**
 	 * Set text on canvas.
 	 *
-	 * @param string $string
+	 * @param string $string Text string.
 	 * @return void
 	 */
 	public function set_text( $string ) {
