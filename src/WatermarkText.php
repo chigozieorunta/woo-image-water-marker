@@ -57,7 +57,7 @@ class WatermarkText {
 	 *
 	 * @param Watermark $watermark
 	 */
-	public function __construct(Watermark $watermark) {
+	public function __construct( Watermark $watermark ) {
 		// RGB
 		$palette = new RGB();
 
@@ -65,14 +65,14 @@ class WatermarkText {
 		$this->image = $watermark->image;
 
 		// Set colors
-		$this->bg_color = $palette->color('#B3B3B3', 100);
-		$this->tx_color = $palette->color('#FFFFFF', 100);
-		$this->text_box = new Box(85, 35);
+		$this->bg_color = $palette->color( '#B3B3B3', 100 );
+		$this->tx_color = $palette->color( '#FFFFFF', 100 );
+		$this->text_box = new Box( 85, 35 );
 
 		// Prepare Text box
 		$font_size  = 20;
 		$font_file  = __DIR__ . '/../fonts/AvertaDemo-Regular.otf';
-		$this->font = new Font($font_file, $font_size, $this->tx_color);
+		$this->font = new Font( $font_file, $font_size, $this->tx_color );
 	}
 
 	/**
@@ -81,19 +81,19 @@ class WatermarkText {
 	 * @param string $string
 	 * @return void
 	 */
-	public function set_text($string) {
+	public function set_text( $string ) {
 		// Imagine
 		$imagine = new Imagine();
 
 		// Draw text on canvas
-		$this->canvas = $imagine->create($this->text_box, $this->bg_color);
-		$this->canvas->draw()->text($string, $this->font, new Point(0, 0));
+		$this->canvas = $imagine->create( $this->text_box, $this->bg_color );
+		$this->canvas->draw()->text( $string, $this->font, new Point( 0, 0 ) );
 
 		// Get top right position of background image
 		$image_size = $this->image->getSize();
 		$position   = $image_size->getWidth() - 85;
 
 		// Paste image
-		$this->image->paste($this->canvas, new Point($position, 0));
+		$this->image->paste( $this->canvas, new Point( $position, 0 ) );
 	}
 }
