@@ -77,7 +77,7 @@ class WatermarkText {
 	}
 
 	/**
-	 * Set text on canvas
+	 * Set text on canvas.
 	 *
 	 * @param string $string
 	 * @return void
