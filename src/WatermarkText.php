@@ -83,7 +83,7 @@ class WatermarkText {
 	 * @return void
 	 */
 	public function set_text( $string ) {
-		// Imagine
+		// Create Imagine object.
 		$imagine = new Imagine();
 
 		// Draw text on canvas
