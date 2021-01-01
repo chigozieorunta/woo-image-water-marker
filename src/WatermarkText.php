@@ -65,7 +65,7 @@ class WatermarkText {
 		// Get Background Image.
 		$this->image = $watermark->image;
 
-		// Set colors
+		// Set colors.
 		$this->bg_color = $palette->color( '#B3B3B3', 100 );
 		$this->tx_color = $palette->color( '#FFFFFF', 100 );
 		$this->text_box = new Box( 85, 35 );
