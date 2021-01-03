@@ -64,7 +64,7 @@ class WatermarkLogo {
 	 * @param Imagine $image
 	 * @return Point
 	 */
-	public function centralize() {
+	public function set() {
 		// Get sizes
 		$logo_size  = $this->logo->getSize();
 		$image_size = $this->image->getSize();
