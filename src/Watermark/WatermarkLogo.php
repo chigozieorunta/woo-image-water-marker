@@ -39,21 +39,7 @@ class WatermarkLogo {
 	public function __construct( Watermark $watermark ) {
 		$imagine     = new Imagine();
 		$this->image = $watermark->image;
-		$this->logo  = $imagine->open( __DIR__ . '/../assets/images/watermark.png' );
-	}
-
-	/**
-	 * Set Location
-	 *
-	 * @param integer $x
-	 * @param integer $y
-	 * @return \Point
-	 */
-	public function location( int $x, int $y ) {
-		// Paste to location
-		$this->image->paste( $this->logo, new Point( $x, $y ) );
-
-		return $this;
+		$this->logo  = $imagine->open( __DIR__ . '/../../assets/images/watermark.png' );
 	}
 
 	/**
