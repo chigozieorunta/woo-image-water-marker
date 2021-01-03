@@ -3,7 +3,7 @@
  * @package WooImageWaterMarker
  */
 
-namespace WooImageWaterMarker;
+namespace WooImageWaterMarker\Watermark;
 
 use Imagine\Imagick\Imagine;
 use Imagine\Image\Point;
