@@ -8,6 +8,7 @@ namespace WooImageWaterMarker\Watermark;
 use Imagine\Imagick\Imagine;
 use Imagine\Image\Point;
 use Imagine\Image\Box;
+use Imagine\Imagick\Image;
 
 /**
  * WatermarkLogo Class
