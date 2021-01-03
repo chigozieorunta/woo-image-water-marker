@@ -94,7 +94,7 @@ class WatermarkText {
 		$image_size = $this->image->getSize();
 		$position   = $image_size->getWidth() - 85;
 
-		// Paste image
+		// Paste image.
 		$this->image->paste( $this->canvas, new Point( $position, 0 ) );
 	}
 }
