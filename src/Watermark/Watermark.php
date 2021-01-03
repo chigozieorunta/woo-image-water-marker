@@ -111,13 +111,13 @@ class Watermark {
 	 */
 	public function get_watermark_image(): string {
 		// Create if it doesn't exist.
-		if ( ! file_exists( plugin_dir_path( __DIR__ ) . '../assets/images/woo-image-water-marker-' . $this->id . '.jpg' ) ) {
+		if ( ! file_exists( plugin_dir_path( __DIR__ ) . '../../assets/images/woo-image-water-marker-' . $this->id . '.jpg' ) ) {
 			$this->create_watermark_image();
 		}
 
 		return sprintf(
 			'<img src="%1$s" />',
-			plugin_dir_url( __DIR__ ) . 'assets/images/woo-image-water-marker-' . $this->id . '.jpg'
+			plugin_dir_url( __DIR__ ) . '../assets/images/woo-image-water-marker-' . $this->id . '.jpg'
 		);
 	}
 
@@ -189,6 +189,6 @@ class Watermark {
 		$this->set_watermark_sku();
 
 		// Save final Watermark image.
-		$this->image->save( __DIR__ . '/../assets/images/woo-image-water-marker-' . $this->id . '.jpg' );
+		$this->image->save( __DIR__ . '/../../assets/images/woo-image-water-marker-' . $this->id . '.jpg' );
 	}
 }
