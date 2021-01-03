@@ -25,7 +25,7 @@ class WatermarkLogo {
 	/**
 	 * Imagine Object for logo.
 	 *
-	 * @var \Imagine
+	 * @var \Image
 	 */
 	public $logo;
 
