@@ -27,7 +27,7 @@ class WatermarkLogo {
 	 *
 	 * @var \Image
 	 */
-	public $logo;
+	public Image $logo;
 
 	/**
 	 * Watermark object
