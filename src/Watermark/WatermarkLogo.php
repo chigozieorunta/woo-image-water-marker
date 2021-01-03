@@ -37,8 +37,7 @@ class WatermarkLogo {
 	public $watermark;
 
 	public function __construct( Watermark $watermark ) {
-		$imagine = new Imagine();
-
+		$imagine     = new Imagine();
 		$this->image = $watermark->image;
 		$this->logo  = $imagine->open( __DIR__ . '/../assets/images/watermark.png' );
 	}
