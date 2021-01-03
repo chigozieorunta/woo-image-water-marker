@@ -27,4 +27,4 @@ if ( file_exists( PLUGIN_AUTOLOAD ) ) {
 }
 
 // Instantiate Plugin.
-( \WooImageWaterMarker\Watermark::init() )->run();
+( \WooImageWaterMarker\Plugin::init() )->run();
