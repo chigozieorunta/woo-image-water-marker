@@ -30,7 +30,7 @@ class WatermarkLogo {
 	public Image $logo;
 
 	/**
-	 * Watermark object
+	 * Watermark object.
 	 *
 	 * @var \Watermark
 	 */
@@ -58,13 +58,11 @@ class WatermarkLogo {
 	}
 
 	/**
-	 * Set logo in center position
+	 * Set logo.
 	 *
-	 * @param Imagine $logo
-	 * @param Imagine $image
-	 * @return Point
+	 * @return void
 	 */
-	public function set() {
+	public function set(): void {
 		// Get sizes
 		$logo_size  = $this->logo->getSize();
 		$image_size = $this->image->getSize();
