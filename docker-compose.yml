@@ -21,7 +21,7 @@ services:
     depends_on:
       - mysql
     ports:
-      - 9999:80
+      - 4096:80
     volumes:
       - wp_data:/var/www/html/wp-content
       - .:/var/www/html/wp-content/plugins/woo-image-water-marker
@@ -38,7 +38,7 @@ services:
     depends_on:
       - mysql
     ports:
-      - 9998:80
+      - 4097:80
     environment:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: password
