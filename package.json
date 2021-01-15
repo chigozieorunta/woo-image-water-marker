@@ -2,6 +2,8 @@
   "name": "woo-image-water-marker",
   "version": "1.0.0",
   "description": "A simple plugin to help you insert water markers into WooCommerce product images.",
+  "author": "Chigozie Orunta",
+  "homepage": "https://github.com/chigozieorunta/woo-image-water-marker#readme",
   "main": "index.js",
   "scripts": {
     "start": "docker-compose up -d"
@@ -11,10 +13,8 @@
     "url": "git+https://github.com/chigozieorunta/woo-image-water-marker.git"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chigozieorunta/woo-image-water-marker/issues"
-  },
-  "homepage": "https://github.com/chigozieorunta/woo-image-water-marker#readme"
+  }
 }
