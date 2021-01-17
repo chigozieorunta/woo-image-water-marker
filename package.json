@@ -10,13 +10,12 @@
     "plugin",
     "woocommerce"
   ],
-  "main": "index.js",
-  "scripts": {
-    "start": "docker-compose up -d"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chigozieorunta/woo-image-water-marker.git"
+  },
+  "scripts": {
+    "start": "docker-compose up -d"
   },
   "bugs": {
     "url": "https://github.com/chigozieorunta/woo-image-water-marker/issues"
