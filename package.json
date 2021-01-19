@@ -5,6 +5,11 @@
   "author": "Chigozie Orunta",
   "homepage": "https://github.com/chigozieorunta/woo-image-water-marker#readme",
   "license": "GPL-2.0-or-later",
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "woocommerce"
+  ],
   "main": "index.js",
   "scripts": {
     "start": "docker-compose up -d"
@@ -13,7 +18,6 @@
     "type": "git",
     "url": "git+https://github.com/chigozieorunta/woo-image-water-marker.git"
   },
-  "keywords": [],
   "bugs": {
     "url": "https://github.com/chigozieorunta/woo-image-water-marker/issues"
   }
