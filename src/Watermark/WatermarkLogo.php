@@ -71,7 +71,17 @@ class WatermarkLogo {
 
 		// Paste to location
 		$this->image->paste( $this->logo, new Point( $middle_x, $middle_y ) );
+	}
 
-		return $this;
+	/**
+	 * Set Position.
+	 *
+	 * @param integer $x X Position.
+	 * @param integer $y Y Position.
+	 * @return void
+	 */
+	public function set_position( int $x, int $y ): void {
+		// Paste to position.
+		$this->image->paste( $this->logo, new Point( $x, $y ) );
 	}
 }
