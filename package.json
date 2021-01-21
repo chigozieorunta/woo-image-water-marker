@@ -19,5 +19,11 @@
   },
   "bugs": {
     "url": "https://github.com/chigozieorunta/woo-image-water-marker/issues"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0"
   }
 }
