@@ -15,7 +15,10 @@
     "url": "git+https://github.com/chigozieorunta/woo-image-water-marker.git"
   },
   "scripts": {
-    "start": "docker-compose up -d"
+    "dev": "composer install && npm install",
+    "start": "docker-compose up -d",
+    "watch": "gulp watch",
+    "compile": "gulp compile"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
