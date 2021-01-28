@@ -18,7 +18,12 @@
     "dev": "composer install && npm install",
     "start": "docker-compose up -d",
     "watch": "gulp watch",
-    "compile": "gulp compile"
+    "compile": "gulp compile",
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:php": "./vendor/bin/phpcs",
+    "lint:php:fix": "./vendor/bin/phpcbf",
+    "lint:css": "stylelint assets/**/*.css && stylelint assets/**/*.scss",
+    "lint:css:fix": "stylelint assets/**/*.css --fix && stylelint assets/**/*.scss --fix"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
