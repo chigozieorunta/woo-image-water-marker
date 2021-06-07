@@ -23,7 +23,9 @@
     "lint:php": "./vendor/bin/phpcs",
     "lint:php:fix": "./vendor/bin/phpcbf",
     "lint:css": "stylelint assets/**/*.css && stylelint assets/**/*.scss",
-    "lint:css:fix": "stylelint assets/**/*.css --fix && stylelint assets/**/*.scss --fix"
+    "lint:css:fix": "stylelint assets/**/*.css --fix && stylelint assets/**/*.scss --fix",
+    "lint:js": "npx eslint assets/**/*.js",
+    "lint:js:fix": "npx eslint --fix assets/**/*.js"
   },
   "devDependencies": {
     "@wordpress/eslint-plugin": "^14.1.0",
