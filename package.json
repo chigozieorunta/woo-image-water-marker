@@ -16,7 +16,8 @@
   },
   "scripts": {
     "dev": "composer install && npm install",
-    "start": "docker-compose up -d",
+    "start": "docker-compose up -d && open http://localhost:4096",
+    "launch": "open http://localhost:4096",
     "watch": "gulp watch",
     "compile": "gulp compile",
     "lint": "npm-run-all --parallel lint:*",
