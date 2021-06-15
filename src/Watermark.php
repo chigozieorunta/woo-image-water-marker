@@ -1,5 +1,7 @@
 <?php
 /**
+ * Main Plugin file.
+ *
  * @package WooImageWaterMarker
  */
 
