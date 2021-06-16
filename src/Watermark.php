@@ -16,6 +16,8 @@ use Imagine\Image\Box;
  */
 class Watermark {
 	/**
+	 * Watermark instance.
+	 *
 	 * @var Watermark
 	 */
 	private static $instance;
