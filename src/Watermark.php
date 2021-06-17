@@ -23,7 +23,7 @@ class Watermark {
 	private static $instance;
 
 	/**
-	 * Image path
+	 * WP Image path.
 	 *
 	 * @var string
 	 */
