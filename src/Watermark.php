@@ -30,7 +30,21 @@ class Watermark {
 	public string $path;
 
 	/**
-	 * Instantiate Plugin
+	 * WP Image ID.
+	 *
+	 * @var integer
+	 */
+	public int $id;
+
+	/**
+	 * WC Product SKU.
+	 *
+	 * @var string
+	 */
+	public string $sku = '';
+
+	/**
+	 * Instantiate Plugin.
 	 *
 	 * @return \Watermark
 	 */
