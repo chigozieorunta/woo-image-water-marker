@@ -67,7 +67,7 @@ class Watermark {
 	}
 
 	/**
-	 * Return thumbnail watermark
+	 * Return thumbnail watermark.
 	 *
 	 * @param string $html
 	 * @param object $image
