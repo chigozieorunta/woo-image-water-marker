@@ -69,8 +69,8 @@ class Watermark {
 	/**
 	 * Return thumbnail watermark.
 	 *
-	 * @param string $html
-	 * @param object $image
+	 * @param string $html WP Image HTML.
+	 * @param object $image WP Image object.
 	 * @return string
 	 */
 	public function get_loop_watermark_image( string $html, object $image ): string {
