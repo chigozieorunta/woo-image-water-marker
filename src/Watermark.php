@@ -74,8 +74,8 @@ class Watermark {
 	 * @return string
 	 */
 	public function get_loop_watermark_image( string $html, object $image ): string {
-		// Get image ID
-		$id = $image->get_image_id();
+		// Get image ID.
+		$this->id = $image->get_image_id();
 
 		// Return HTML watermark
 		return $id ? $this->get_watermark_image( $id ) : '';
