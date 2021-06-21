@@ -77,8 +77,8 @@ class Watermark {
 		// Get image ID.
 		$this->id = $image->get_image_id();
 
-		// Return HTML watermark
-		return $id ? $this->get_watermark_image( $id ) : '';
+		// Return HTML watermark.
+		return $this->id ? $this->get_watermark_image() : '';
 	}
 
 	/**
