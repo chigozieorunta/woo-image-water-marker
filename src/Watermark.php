@@ -84,8 +84,8 @@ class Watermark {
 	/**
 	 * Return thumbnail watermark
 	 *
-	 * @param string  $html
-	 * @param integer $id
+	 * @param string  $html WP Image HTML.
+	 * @param integer $id WP Image ID.
 	 * @return string
 	 */
 	public function get_single_watermark_image( string $html, int $id ): string {
