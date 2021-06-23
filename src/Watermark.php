@@ -89,8 +89,11 @@ class Watermark {
 	 * @return string
 	 */
 	public function get_single_watermark_image( string $html, int $id ): string {
-		// Return HTML watermark
-		return $this->get_watermark_image( $id );
+		// Get image ID.
+		$this->id = $id;
+
+		// Return HTML watermark.
+		return $this->id ? $this->get_watermark_image() : '';
 	}
 
 	/**
