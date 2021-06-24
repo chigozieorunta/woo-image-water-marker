@@ -99,7 +99,6 @@ class Watermark {
 	/**
 	 * Get watermark image
 	 *
-	 * @param integer $id
 	 * @return string
 	 */
 	public function get_watermark_image( int $id ): string {
