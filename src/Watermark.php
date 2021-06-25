@@ -101,13 +101,10 @@ class Watermark {
 	 *
 	 * @return string
 	 */
-	public function get_watermark_image( int $id ): string {
-		// No need to re-render, displayed cached images if they exist
-		if ( file_exists( plugin_dir_path( __DIR__ ) . '../images/woo-image-water-marker-' . $id . '.jpg' ) ) {
-			return sprintf(
-				'<img src="%1$s" />',
-				plugin_dir_url( __DIR__ ) . 'images/woo-image-water-marker-' . $id . '.jpg'
-			);
+	public function get_watermark_image(): string {
+		// Create if it doesn't exist.
+		if ( ! file_exists( plugin_dir_path( __DIR__ ) . '../images/woo-image-water-marker-' . $this->id . '.jpg' ) ) {
+			$this->create_watermark_image();
 		}
 
 		// Prepare dynamic image
