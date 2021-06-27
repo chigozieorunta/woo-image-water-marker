@@ -107,28 +107,6 @@ class Watermark {
 			$this->create_watermark_image();
 		}
 
-		// Prepare dynamic image
-		$imagine = new Imagine();
-
-		// Get absolute path...
-		$this->get_image_absolute_path( $id );
-		$this->image = $imagine->open( $this->path );
-
-		// Get Product SKU
-		global $product;
-		$product_sku = $product->get_sku();
-
-		// Get Watermark logo
-		$logo = new WatermarkLogo( $this );
-		$logo->centralize();
-
-		// Get Watermark Text
-		$text = new WatermarkText( $this );
-		$text->set_text( $product_sku );
-
-		// Save final Watermark image
-		$this->image->save( __DIR__ . '/../images/woo-image-water-marker-' . $id . '.jpg' );
-
 		return sprintf(
 			'<img src="%1$s" />',
 			plugin_dir_url( __DIR__ ) . 'images/woo-image-water-marker-' . $id . '.jpg'
