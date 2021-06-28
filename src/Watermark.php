@@ -109,7 +109,7 @@ class Watermark {
 
 		return sprintf(
 			'<img src="%1$s" />',
-			plugin_dir_url( __DIR__ ) . 'images/woo-image-water-marker-' . $id . '.jpg'
+			plugin_dir_url( __DIR__ ) . 'images/woo-image-water-marker-' . $this->id . '.jpg'
 		);
 	}
 
