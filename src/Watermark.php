@@ -1,6 +1,6 @@
 <?php
 /**
- * Main Plugin file.
+ * Main Plugin.
  *
  * @package WooImageWaterMarker
  */
@@ -57,7 +57,7 @@ class Watermark {
 	}
 
 	/**
-	 * Activate plugin...
+	 * Activate plugin.
 	 *
 	 * @return void
 	 */
@@ -82,7 +82,7 @@ class Watermark {
 	}
 
 	/**
-	 * Return thumbnail watermark
+	 * Return thumbnail watermark.
 	 *
 	 * @param string  $html WP Image HTML.
 	 * @param integer $id WP Image ID.
@@ -97,7 +97,7 @@ class Watermark {
 	}
 
 	/**
-	 * Get watermark image
+	 * Get watermark image.
 	 *
 	 * @return string
 	 */
