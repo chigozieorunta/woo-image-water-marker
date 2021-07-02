@@ -112,4 +112,18 @@ class Watermark {
 			plugin_dir_url( __DIR__ ) . 'images/woo-image-water-marker-' . $this->id . '.jpg'
 		);
 	}
+
+	/**
+     * Set Image absolute path.
+     *
+     * @return void
+     */
+    public function set_image_absolute_path(): void {
+        // Get absolute path.
+        $woo_image_url   = wp_get_attachment_url( $this->id );
+        $img_uploads_dir = wp_upload_dir();
+
+        // Set image path.
+        $this->path = str_replace( $img_uploads_dir['baseurl'], $img_uploads_dir['basedir'], $woo_image_url );
+    }
 }
