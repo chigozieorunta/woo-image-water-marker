@@ -126,4 +126,18 @@ class Watermark {
         // Set image path.
         $this->path = str_replace( $img_uploads_dir['baseurl'], $img_uploads_dir['basedir'], $woo_image_url );
     }
+
+	/**
+     * Set Logo on Watermark.
+     *
+     * @return void
+     */
+    public function set_watermark_logo(): void {
+        // Set Image.
+        $this->image = ( new Imagine() )->open( $this->path );
+
+        // Set Watermark logo.
+        $logo = new WatermarkLogo( $this );
+        $logo->centralize();
+    }
 }
