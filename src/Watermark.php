@@ -140,4 +140,23 @@ class Watermark {
         $logo = new WatermarkLogo( $this );
         $logo->centralize();
     }
+
+	/**
+     * Set Product SKU on Watermark.
+     *
+     * @return void
+     */
+    public function set_watermark_sku(): void {
+        // Get Product SKU.
+        global $product;
+
+        // Check if Product SKU exists.
+        if ( ! $this->sku = $product->get_sku() ) {
+            return;
+        }
+
+        // Set Watermark Text.
+        $text = new WatermarkText( $this );
+        $text->set();
+    }
 }
