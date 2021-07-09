@@ -159,4 +159,18 @@ class Watermark {
         $text = new WatermarkText( $this );
         $text->set();
     }
+
+	/**
+     * Create Watermark.
+     *
+     * @return void
+     */
+    public function create_watermark_image(): void {
+        $this->set_image_absolute_path();
+        $this->set_watermark_logo();
+        $this->set_watermark_sku();
+
+        // Save final Watermark image.
+        $this->image->save( __DIR__ . '/../images/woo-image-water-marker-' . $this->id . '.jpg' );
+    }
 }
