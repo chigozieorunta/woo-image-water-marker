@@ -136,6 +136,16 @@ class Watermark {
 	}
 
 	/**
+	 * Set Watermark Image.
+	 *
+	 * @return void
+	 */
+	public function set_watermark_image(): void {
+		$imagine = new Imagine();
+		$this->image = $imagine->open( $this->path );
+	}
+
+	/**
 	 * Set Logo on Watermark.
 	 *
 	 * @return void
@@ -174,6 +184,7 @@ class Watermark {
 	 */
 	public function create_watermark_image(): void {
 		$this->set_image_absolute_path();
+		$this->set_watermark_image();
 		$this->set_watermark_logo();
 		$this->set_watermark_sku();
 
