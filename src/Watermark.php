@@ -77,6 +77,10 @@ class Watermark {
 		// Get image ID.
 		$this->id = $image->get_image_id();
 
+		// Get Product SKU.
+		global $product;
+		$this->sku = $product->get_sku();
+
 		// Return HTML watermark.
 		return $this->id ? $this->get_watermark_image() : '';
 	}
@@ -91,6 +95,10 @@ class Watermark {
 	public function get_single_watermark_image( string $html, int $id ): string {
 		// Get image ID.
 		$this->id = $id;
+
+		// Get Product SKU.
+		global $product;
+		$this->sku = $product->get_sku();
 
 		// Return HTML watermark.
 		return $this->id ? $this->get_watermark_image() : '';
