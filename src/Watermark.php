@@ -122,63 +122,62 @@ class Watermark {
 	}
 
 	/**
-     * Set Image absolute path.
-     *
-     * @return void
-     */
-    public function set_image_absolute_path(): void {
-        // Get absolute path.
-        $woo_image_url   = wp_get_attachment_url( $this->id );
-        $img_uploads_dir = wp_upload_dir();
+	 * Set Image absolute path.
+	 *
+	 * @return void
+	 */
+	public function set_image_absolute_path(): void {
+		// Get absolute path.
+		$woo_image_url   = wp_get_attachment_url( $this->id );
+		$img_uploads_dir = wp_upload_dir();
 
-        // Set image path.
-        $this->path = str_replace( $img_uploads_dir['baseurl'], $img_uploads_dir['basedir'], $woo_image_url );
-    }
-
-	/**
-     * Set Logo on Watermark.
-     *
-     * @return void
-     */
-    public function set_watermark_logo(): void {
-        // Set Image.
-        $this->image = ( new Imagine() )->open( $this->path );
-
-        // Set Watermark logo.
-        $logo = new WatermarkLogo( $this );
-        $logo->centralize();
-    }
+		// Set image path.
+		$this->path = str_replace( $img_uploads_dir['baseurl'], $img_uploads_dir['basedir'], $woo_image_url );
+	}
 
 	/**
-     * Set Product SKU on Watermark.
-     *
-     * @return void
-     */
-    public function set_watermark_sku(): void {
-        // Get Product SKU.
-        global $product;
+	 * Set Logo on Watermark.
+	 *
+	 * @return void
+	 */
+	public function set_watermark_logo(): void {
+		// Check if Image path exists.
+		if ( ! $this->path ) {
+			return;
+		}
 
-        // Check if Product SKU exists.
-        if ( ! $this->sku = $product->get_sku() ) {
-            return;
-        }
-
-        // Set Watermark Text.
-        $text = new WatermarkText( $this );
-        $text->set();
-    }
+		// Set Watermark logo.
+		$logo = new WatermarkLogo( $this );
+		$logo->set();
+	}
 
 	/**
-     * Create Watermark.
-     *
-     * @return void
-     */
-    public function create_watermark_image(): void {
-        $this->set_image_absolute_path();
-        $this->set_watermark_logo();
-        $this->set_watermark_sku();
+	 * Set Product SKU on Watermark.
+	 *
+	 * @return void
+	 */
+	public function set_watermark_sku(): void {
+		// Check if Product SKU exists.
+		if ( ! $this->sku ) {
+			return;
+		}
 
-        // Save final Watermark image.
-        $this->image->save( __DIR__ . '/../images/woo-image-water-marker-' . $this->id . '.jpg' );
-    }
+		// Set Watermark Text.
+		$text = new WatermarkText( $this );
+		$text->set();
+	}
+
+	/**
+	 * Create Watermark.
+	 *
+	 * @return void
+	 */
+	public function create_watermark_image(): void {
+		$this->set_image_absolute_path();
+		$this->set_watermark_logo();
+		$this->set_watermark_sku();
+
+		// Save final Watermark image.
+		$this->image->save( __DIR__ . '/../images/woo-image-water-marker-' . $this->id . '.jpg' );
+	}
 }
