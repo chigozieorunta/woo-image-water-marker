@@ -146,7 +146,7 @@ class Watermark {
 	}
 
 	/**
-	 * Set Logo on Watermark.
+	 * Set Logo on Watermark Image.
 	 *
 	 * @return void
 	 */
@@ -162,7 +162,7 @@ class Watermark {
 	}
 
 	/**
-	 * Set Product SKU on Watermark.
+	 * Set Product SKU on Watermark Image.
 	 *
 	 * @return void
 	 */
