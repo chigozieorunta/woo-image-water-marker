@@ -18,6 +18,12 @@ use Imagine\Imagick\Image;
  * WatermarkText Class.
  */
 class WatermarkText {
+	/**
+	 * Text font.
+	 *
+	 * @var \Font
+	 */
+	public Font $font;
 
 	/**
 	 * Text Font.
