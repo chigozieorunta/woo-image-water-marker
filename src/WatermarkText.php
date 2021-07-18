@@ -26,7 +26,14 @@ class WatermarkText {
 	public Font $font;
 
 	/**
-	 * Text Font.
+	 * Text box.
+	 *
+	 * @var \Box
+	 */
+	public Box $text_box;
+
+	/**
+	 * Image Canvas.
 	 *
 	 * @var object
 	 */
