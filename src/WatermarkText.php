@@ -12,6 +12,7 @@ use Imagine\Gd\Font;
 use Imagine\Image\Palette\RGB;
 use Imagine\Image\Box;
 use Imagine\Image\Point;
+use Imagine\Imagick\Image;
 
 /**
  * WatermarkText Class.
