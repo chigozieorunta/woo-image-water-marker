@@ -141,7 +141,7 @@ class Watermark {
 	 * @return void
 	 */
 	public function set_watermark_image(): void {
-		$imagine = new Imagine();
+		$imagine     = new Imagine();
 		$this->image = $imagine->open( $this->path );
 	}
 
