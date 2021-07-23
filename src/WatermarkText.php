@@ -35,7 +35,7 @@ class WatermarkText {
 	/**
 	 * Image Canvas.
 	 *
-	 * @var object
+	 * @var \Image
 	 */
 	public $font;
 
