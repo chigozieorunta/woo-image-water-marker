@@ -37,7 +37,7 @@ class WatermarkText {
 	 *
 	 * @var \Image
 	 */
-	public $font;
+	public Image $image;
 
 	/**
 	 * Background color.
