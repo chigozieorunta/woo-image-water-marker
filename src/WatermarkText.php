@@ -54,7 +54,7 @@ class WatermarkText {
 	public $tx_color;
 
 	/**
-	 * Text box.
+	 * WC Product SKU.
 	 *
 	 * @var object
 	 */
