@@ -56,7 +56,7 @@ class WatermarkText {
 	/**
 	 * WC Product SKU.
 	 *
-	 * @var object
+	 * @var string
 	 */
 	public $text_box;
 
