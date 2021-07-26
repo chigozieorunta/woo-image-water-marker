@@ -58,7 +58,7 @@ class WatermarkText {
 	 *
 	 * @var string
 	 */
-	public $text_box;
+	public string $sku;
 
 	/**
 	 * Image Canvas.
