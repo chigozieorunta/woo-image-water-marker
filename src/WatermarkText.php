@@ -63,7 +63,7 @@ class WatermarkText {
 	/**
 	 * Text String.
 	 *
-	 * @var object
+	 * @var string
 	 */
 	public $image;
 
