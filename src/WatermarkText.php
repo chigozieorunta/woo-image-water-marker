@@ -65,7 +65,7 @@ class WatermarkText {
 	 *
 	 * @var string
 	 */
-	public $image;
+	public string $text;
 
 	/**
 	 * Text constructor
