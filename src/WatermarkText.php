@@ -73,42 +73,80 @@ class WatermarkText {
 	 * @param \Watermark $watermark Watermark instance.
 	 */
 	public function __construct( Watermark $watermark ) {
-		// RGB.
-		$palette = new RGB();
-
-		// Get Background Image.
+		// Get image.
 		$this->image = $watermark->image;
+		$this->sku   = $watermark->sku ?: '';
 
+		// Set colors and font.
+		$this->set_colors();
+		$this->set_font();
+	}
+
+	/**
+	 * Set text on canvas.
+	 *
+	 * @param string $text Text string.
+	 * @return void
+	 */
+	public function set( $text = '' ) {
+		// Get SKU or string.
+		$this->text = $text ?: $this->sku;
+
+		// Create canvas and set text position.
+		$this->set_canvas();
+		$this->set_position();
+	}
+
+	/**
+	 * Set colors.
+	 *
+	 * @return void
+	 */
+	public function set_colors() {
 		// Set colors.
+		$palette        = new RGB();
 		$this->bg_color = $palette->color( '#B3B3B3', 100 );
 		$this->tx_color = $palette->color( '#FFFFFF', 100 );
-		$this->text_box = new Box( 85, 35 );
+	}
 
-		// Prepare Text box.
+	/**
+	 * Set font.
+	 *
+	 * @return void
+	 */
+	public function set_font() {
+		// Set font.
 		$font_size  = 20;
 		$font_file  = __DIR__ . '/../fonts/AvertaDemo-Regular.otf';
 		$this->font = new Font( $font_file, $font_size, $this->tx_color );
 	}
 
 	/**
-	 * Set text on canvas.
+	 * Set canvas.
 	 *
-	 * @param string $string Text string.
 	 * @return void
 	 */
-	public function set_text( $string ) {
-		// Create Imagine object.
+	public function set_canvas() {
+		// Get Imagine object.
 		$imagine = new Imagine();
 
-		// Draw text on canvas.
-		$this->canvas = $imagine->create( $this->text_box, $this->bg_color );
-		$this->canvas->draw()->text( $string, $this->font, new Point( 0, 0 ) );
+		// Set canvas.
+		$this->text_box = new Box( 85, 35 );
+		$this->canvas   = $imagine->create( $this->text_box, $this->bg_color );
+		$this->canvas->draw()->text( $this->text, $this->font, new Point( 0, 0 ) );
+	}
 
-		// Get top right position of background image.
+	/**
+	 * Set position.
+	 *
+	 * @return void
+	 */
+	public function set_position() {
+		// Get top right position of image.
 		$image_size = $this->image->getSize();
 		$position   = $image_size->getWidth() - 85;
 
-		// Paste image.
+		// Set text position.
 		$this->image->paste( $this->canvas, new Point( $position, 0 ) );
 	}
 }
