@@ -1,11 +1,14 @@
 <?php
+/**
+ * @package WooImageWaterMarker
+ */
 
 namespace WooImageWaterMarker;
 
 /**
  * Plugin Class
  */
-final class Plugin {
+class Plugin {
 	/**
 	 * @var object
 	 */
@@ -16,7 +19,7 @@ final class Plugin {
 	 *
 	 * @return object
 	 */
-	public static function init(): {
+	public static function init() {
 		if ( null === self::$instance ) {
 			self::$instance = new self();
 		}
