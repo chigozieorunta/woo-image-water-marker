@@ -1,0 +1,34 @@
+{
+    "name": "chigozieorunta/woo-image-water-marker",
+    "description": "A simple plugin to help you insert water markers into WooCommerce product images.",
+    "type": "wordpress-plugin",
+    "require": {
+        "ajaxray/php-watermark": "^0.1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "mockery/mockery": "^1.5",
+        "10up/wp_mock": "^0.4.2",
+        "wp-coding-standards/wpcs": "^2.3",
+        "phpcompatibility/phpcompatibility-wp": "^2.1",
+        "php-coveralls/php-coveralls": "^2.5",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2"
+    },
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Chigozieorunta\\WooImageWaterMarker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Chigozie Orunta",
+            "email": "chigozieorunta@yahoo.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
