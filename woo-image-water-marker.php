@@ -18,8 +18,12 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-if ( file_exists( __DIR__ . '/vendor/autoload.php' ) )
-	require_once 'vendor/autoload.php';
+// Define constants
+define( 'PLUGIN_AUTOLOAD', __DIR__ . '/vendor/autoload.php' );
 
+// Require Autoloader
+if ( file_exists( PLUGIN_AUTOLOAD ) ) require_once PLUGIN_AUTOLOAD;
+
+// Initialize Plugin
 $plugin = \WooImageWaterMarker\Plugin::init();
 $plugin->activate();
