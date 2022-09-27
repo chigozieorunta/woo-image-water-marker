@@ -9,7 +9,7 @@ final class Plugin {
 	/**
 	 * @var object
 	 */
-	public static $instance;
+	private static $instance;
 
 	/**
 	 * Undocumented function
