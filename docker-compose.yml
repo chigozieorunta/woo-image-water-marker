@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  mysql:
+    image: mysql:5
+    platform: linux/amd64
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+
+  wordpress:
+    image: wordpress
+    depends_on:
+      - mysql
+    ports:
+      - 9999:80
+    volumes:
+      - wp_data:/var/www/html/wp-content
+      - .:/var/www/html/wp-content/plugins/woo-image-water-marker
+    restart: always
+    environment:
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: password
+
+volumes:
+  db_data: {}
+  wp_data: {}
