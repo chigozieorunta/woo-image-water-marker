@@ -13,6 +13,8 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: password
+    networks:
+      - woo-image-water-maker
 
   wordpress:
     image: wordpress
@@ -27,7 +29,25 @@ services:
     environment:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: password
+    networks:
+      - woo-image-water-maker
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - 9998:80
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - woo-image-water-maker
 
 volumes:
   db_data: {}
   wp_data: {}
+
+networks:
+  woo-image-water-maker:
