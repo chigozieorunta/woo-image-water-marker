@@ -2,6 +2,10 @@
 
 A simple plugin to help you insert water markers into WooCommerce product images.
 
+## Screenshots
+
+![alt text](http://url/to/img.png)
+
 ## Requirements
 
 - WordPress 5.0+
