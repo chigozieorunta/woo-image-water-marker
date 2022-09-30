@@ -77,6 +77,13 @@ class Watermark {
 	 * @return string
 	 */
 	public function get_watermark_image( int $id ) : string {
+		if ( file_exists( plugin_dir_path( __DIR__ ) . '../images/woo-image-water-marker-' . $id . '.jpg' ) ) {
+			return sprintf(
+				'<img src="%1$s" />',
+				plugin_dir_url( __DIR__ ) . 'images/woo-image-water-marker-' . $id . '.jpg'
+			);
+		}
+
 		$imagine = new Imagine();
 
 		// Get absolute path...
