@@ -27,21 +27,21 @@ class WatermarkText {
 	/**
 	 * Background color
 	 *
-	 * @var [type]
+	 * @var string
 	 */
 	public $bg_color;
 
 	/**
 	 * Text color
 	 *
-	 * @var [type]
+	 * @var string
 	 */
 	public $tx_color;
 
 	/**
 	 * Text box
 	 *
-	 * @var [type]
+	 * @var object
 	 */
 	public $text_box;
 
