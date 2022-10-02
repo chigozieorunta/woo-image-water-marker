@@ -17,7 +17,12 @@ class Watermark {
 	 * @var Watermark
 	 */
 	private static $instance;
-	public int $id;
+
+	/**
+	 * Image path
+	 *
+	 * @var string
+	 */
 	public string $path;
 
 	/**
