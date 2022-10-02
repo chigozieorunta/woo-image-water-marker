@@ -6,7 +6,6 @@
 
 namespace WooImageWaterMarker;
 
-//use Imagine\Gd\Imagine;
 use Imagine\Imagick\Imagine;
 use Imagine\Gd\Font;
 use Imagine\Image\Palette\RGB;
@@ -18,12 +17,46 @@ use Imagine\Image\Point;
  */
 class WatermarkText {
 
+	/**
+	 * Text Font
+	 *
+	 * @var object
+	 */
 	public $font;
+
+	/**
+	 * Background color
+	 *
+	 * @var [type]
+	 */
 	public $bg_color;
+
+	/**
+	 * Text color
+	 *
+	 * @var [type]
+	 */
 	public $tx_color;
-	public $image_box;
+
+	/**
+	 * Text box
+	 *
+	 * @var [type]
+	 */
+	public $text_box;
+
+	/**
+	 * Image Canvas
+	 *
+	 * @var object
+	 */
 	public $image;
 
+	/**
+	 * Text constructor
+	 *
+	 * @param Watermark $watermark
+	 */
 	public function __construct(Watermark $watermark) {
 		// RGB
 		$palette = new RGB();
@@ -32,9 +65,9 @@ class WatermarkText {
 		$this->image = $watermark->image;
 
 		// Set colors
-		$this->bg_color  = $palette->color('#B3B3B3', 100);
-		$this->tx_color  = $palette->color('#FFFFFF', 100);
-		$this->image_box = new Box(85, 35);
+		$this->bg_color = $palette->color('#B3B3B3', 100);
+		$this->tx_color = $palette->color('#FFFFFF', 100);
+		$this->text_box = new Box(85, 35);
 
 		// Prepare Text box
 		$font_size  = 20;
@@ -42,12 +75,18 @@ class WatermarkText {
 		$this->font = new Font($font_file, $font_size, $this->tx_color);
 	}
 
+	/**
+	 * Set text on canvas
+	 *
+	 * @param string $string
+	 * @return void
+	 */
 	public function set_text($string) {
 		// Imagine
 		$imagine = new Imagine();
 
 		// Draw text on canvas
-		$this->canvas = $imagine->create($this->image_box, $this->bg_color);
+		$this->canvas = $imagine->create($this->text_box, $this->bg_color);
 		$this->canvas->draw()->text($string, $this->font, new Point(0, 0));
 
 		// Get top right position of background image
@@ -58,4 +97,3 @@ class WatermarkText {
 		$this->image->paste($this->canvas, new Point($position, 0));
 	}
 }
-		//$position = $woo_image_size->getWidth() - 80;
