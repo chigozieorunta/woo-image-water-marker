@@ -122,13 +122,15 @@ class Watermark {
 	 * Get image's absolute path
 	 *
 	 * @param integer $id
-	 * @return void
+	 * @return string
 	 */
-	public function get_image_absolute_path( int $id ) : void {
+	public function get_image_absolute_path( int $id ) : string {
 		// Get absolute path
 		$woo_image_url   = wp_get_attachment_url( $id );
 		$img_uploads_dir = wp_upload_dir();
 
 		$this->path = str_replace( $img_uploads_dir['baseurl'], $img_uploads_dir['basedir'], $woo_image_url );
+
+		return $this->path;
 	}
 }
