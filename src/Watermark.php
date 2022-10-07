@@ -28,7 +28,7 @@ class Watermark {
 	/**
 	 * Instantiate Plugin
 	 *
-	 * @return Watermark
+	 * @return \Watermark
 	 */
 	public static function init() {
 		if ( null === self::$instance ) {
@@ -43,7 +43,7 @@ class Watermark {
 	 *
 	 * @return void
 	 */
-	public function activate() : void {
+	public function activate(): void {
 		add_filter( 'woocommerce_product_get_image', [ $this, 'get_loop_watermark_image' ], 10, 2 );
 		add_filter( 'woocommerce_single_product_image_thumbnail_html', [ $this, 'get_single_watermark_image' ], 10, 2 );
 	}
@@ -55,7 +55,7 @@ class Watermark {
 	 * @param object $image
 	 * @return string
 	 */
-	public function get_loop_watermark_image( string $html, object $image ) : string {
+	public function get_loop_watermark_image( string $html, object $image ): string {
 		// Get image ID
 		$id = $image->get_image_id();
 
@@ -70,7 +70,7 @@ class Watermark {
 	 * @param integer $id
 	 * @return string
 	 */
-	public function get_single_watermark_image( string $html, int $id ) : string {
+	public function get_single_watermark_image( string $html, int $id ): string {
 		// Return HTML watermark
 		return $this->get_watermark_image( $id );
 	}
@@ -81,7 +81,7 @@ class Watermark {
 	 * @param integer $id
 	 * @return string
 	 */
-	public function get_watermark_image( int $id ) : string {
+	public function get_watermark_image( int $id ): string {
 		// No need to re-render, displayed cached images if they exist
 		if ( file_exists( plugin_dir_path( __DIR__ ) . '../images/woo-image-water-marker-' . $id . '.jpg' ) ) {
 			return sprintf(
@@ -124,7 +124,7 @@ class Watermark {
 	 * @param integer $id
 	 * @return string
 	 */
-	public function get_image_absolute_path( int $id ) : string {
+	public function get_image_absolute_path( int $id ): string {
 		// Get absolute path
 		$woo_image_url   = wp_get_attachment_url( $id );
 		$img_uploads_dir = wp_upload_dir();
