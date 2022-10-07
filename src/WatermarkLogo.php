@@ -14,8 +14,25 @@ use Imagine\Image\Box;
  */
 class WatermarkLogo {
 
+	/**
+	 * Imagine Object for image.
+	 *
+	 * @var \Imagine
+	 */
 	public $image;
+
+	/**
+	 * Imagine Object for logo.
+	 *
+	 * @var \Imagine
+	 */
 	public $logo;
+
+	/**
+	 * Watermark object
+	 *
+	 * @var \Watermark
+	 */
 	public $watermark;
 
 	public function __construct(Watermark $watermark) {
@@ -31,7 +48,7 @@ class WatermarkLogo {
 	 *
 	 * @param integer $x
 	 * @param integer $y
-	 * @return Point
+	 * @return \Point
 	 */
 	public function location( int $x, int $y ) {
 		// Paste to location
