@@ -18,10 +18,10 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-// Define constants
+// Define constants.
 define( 'PLUGIN_AUTOLOAD', __DIR__ . '/vendor/autoload.php' );
 
-// Require Autoloader
+// Require Autoloader.
 if ( file_exists( PLUGIN_AUTOLOAD ) ) {
 	require_once PLUGIN_AUTOLOAD;
 }
