@@ -43,7 +43,7 @@ class Watermark {
 	 *
 	 * @return void
 	 */
-	public function activate(): void {
+	public function run(): void {
 		add_filter( 'woocommerce_product_get_image', [ $this, 'get_loop_watermark_image' ], 10, 2 );
 		add_filter( 'woocommerce_single_product_image_thumbnail_html', [ $this, 'get_single_watermark_image' ], 10, 2 );
 	}
