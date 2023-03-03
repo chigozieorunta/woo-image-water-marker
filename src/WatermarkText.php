@@ -117,7 +117,7 @@ class WatermarkText {
 	public function set_font() {
 		// Set font.
 		$font_size  = 20;
-		$font_file  = __DIR__ . '/../fonts/AvertaDemo-Regular.otf';
+		$font_file  = __DIR__ . '/../assets/fonts/AvertaDemo-Regular.otf';
 		$this->font = new Font( $font_file, $font_size, $this->tx_color );
 	}
 
