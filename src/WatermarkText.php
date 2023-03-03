@@ -88,7 +88,7 @@ class WatermarkText {
 	 * @param string $text Text string.
 	 * @return void
 	 */
-	public function set( $text = '' ) {
+	public function set( $text = '' ): void {
 		// Get SKU or string.
 		$this->text = $text ?: $this->sku;
 
@@ -102,7 +102,7 @@ class WatermarkText {
 	 *
 	 * @return void
 	 */
-	public function set_colors() {
+	public function set_colors(): void {
 		// Set colors.
 		$palette        = new RGB();
 		$this->bg_color = $palette->color( '#B3B3B3', 100 );
@@ -114,7 +114,7 @@ class WatermarkText {
 	 *
 	 * @return void
 	 */
-	public function set_font() {
+	public function set_font(): void {
 		// Set font.
 		$font_size  = 20;
 		$font_file  = __DIR__ . '/../assets/fonts/AvertaDemo-Regular.otf';
@@ -126,7 +126,7 @@ class WatermarkText {
 	 *
 	 * @return void
 	 */
-	public function set_canvas() {
+	public function set_canvas(): void {
 		// Get Imagine object.
 		$imagine = new Imagine();
 
@@ -141,7 +141,7 @@ class WatermarkText {
 	 *
 	 * @return void
 	 */
-	public function set_position() {
+	public function set_position(): void {
 		// Get top right position of image.
 		$image_size = $this->image->getSize();
 		$position   = $image_size->getWidth() - 85;
