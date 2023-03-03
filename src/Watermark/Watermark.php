@@ -5,7 +5,7 @@
  * @package WooImageWaterMarker
  */
 
-namespace WooImageWaterMarker;
+namespace WooImageWaterMarker\Watermark;
 
 use Imagine\Imagick\Imagine;
 use Imagine\Image\Point;
@@ -48,7 +48,7 @@ class Watermark {
 	 *
 	 * @return \Watermark
 	 */
-	public static function init() {
+	public static function get_instance() {
 		if ( null === self::$instance ) {
 			self::$instance = new self();
 		}
