@@ -61,7 +61,7 @@ class WatermarkText {
 	public string $sku;
 
 	/**
-	 * Image Canvas.
+	 * Text String.
 	 *
 	 * @var object
 	 */
