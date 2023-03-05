@@ -62,12 +62,8 @@ class WatermarkLogo {
 	 * @return void
 	 */
 	public function set(): void {
-		// Get sizes
-		$logo_size  = $this->logo->getSize();
-		$image_size = $this->image->getSize();
-
-		// Get ratio
-		$ratio = $logo_size->getWidth() / $logo_size->getHeight();
+		// Resize logo first.
+		$this->resize_logo();
 
 		// Get new width and height
 		$new_width  = $image_size->getWidth() / 2;
