@@ -98,8 +98,17 @@ class WatermarkLogo {
 				$coordinates[] = ( $image_size->getHeight() - $logo_size->getHeight() );
 				break;
 
-		// Paste to location
-		$this->image->paste( $this->logo, new Point( $middle_x, $middle_y ) );
+			case 'bottom-right':
+				$coordinates[] = ( $image_size->getWidth() - $logo_size->getWidth() );
+				$coordinates[] = ( $image_size->getHeight() - $logo_size->getHeight() );
+				break;
+
+			default:
+				$coordinates[] = ( $image_size->getWidth() - $logo_size->getWidth() ) / 2;
+				$coordinates[] = ( $image_size->getHeight() - $logo_size->getHeight() ) / 2;
+		}
+
+		return apply_filters( 'wiwm_logo_position', $coordinates );
 	}
 
 	/**
