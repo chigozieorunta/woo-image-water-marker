@@ -73,9 +73,30 @@ class WatermarkLogo {
 		// Get Position.
 		list($this->x, $this->y) = $this->get_position();
 
-		// Get middle positions for resized logo
-		$middle_x = ( $image_size->getWidth() - $logo_size->getWidth() ) / 2;
-		$middle_y = ( $image_size->getHeight() - $logo_size->getHeight() ) / 2;
+		// Set Position of logo.
+		$this->image->paste( $this->logo, new Point( $this->x, $this->y ) );
+	}
+
+	public function get_position(): array {
+		// Get sizes of logo and image.
+		$logo_size  = $this->logo->getSize();
+		$image_size = $this->image->getSize();
+
+		switch ( apply_filters( 'wiwm_logo_position', 'center' ) ) {
+			case 'top-left':
+				$coordinates[] = 0;
+				$coordinates[] = 0;
+				break;
+
+			case 'top-right':
+				$coordinates[] = ( $image_size->getWidth() - $logo_size->getWidth() );
+				$coordinates[] = 0;
+				break;
+
+			case 'bottom-left':
+				$coordinates[] = 0;
+				$coordinates[] = ( $image_size->getHeight() - $logo_size->getHeight() );
+				break;
 
 		// Paste to location
 		$this->image->paste( $this->logo, new Point( $middle_x, $middle_y ) );
