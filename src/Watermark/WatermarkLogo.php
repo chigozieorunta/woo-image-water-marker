@@ -69,8 +69,9 @@ class WatermarkLogo {
 		$this->set_position();
 	}
 
-		// Get size of resized logo
-		$logo_size = $this->logo->getSize();
+	public function set_position(): void {
+		// Get Position.
+		list($this->x, $this->y) = $this->get_position();
 
 		// Get middle positions for resized logo
 		$middle_x = ( $image_size->getWidth() - $logo_size->getWidth() ) / 2;
