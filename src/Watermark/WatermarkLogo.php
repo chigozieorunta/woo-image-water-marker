@@ -65,12 +65,9 @@ class WatermarkLogo {
 		// Resize logo first.
 		$this->resize_logo();
 
-		// Get new width and height
-		$new_width  = $image_size->getWidth() / 2;
-		$new_height = $new_width / $ratio;
-
-		// Resize & rescale logo to fit half of image width
-		$this->logo->resize( new Box( $new_width, $new_height ) );
+		// Set logo in center position.
+		$this->set_position();
+	}
 
 		// Get size of resized logo
 		$logo_size = $this->logo->getSize();
