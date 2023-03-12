@@ -122,18 +122,18 @@ class WatermarkText {
 	}
 
 	/**
-	 * Set canvas.
+	 * Set text box.
 	 *
 	 * @return void
 	 */
-	public function set_canvas(): void {
+	public function set_text_box(): void {
 		// Get Imagine object.
 		$imagine = new Imagine();
 
-		// Set canvas.
-		$this->text_box = new Box( 85, 35 );
-		$this->canvas   = $imagine->create( $this->text_box, $this->bg_color );
-		$this->canvas->draw()->text( $this->text, $this->font, new Point( 0, 0 ) );
+		// Set text box.
+		$empty_text_canvas = new Box( 85, 35 );
+		$this->text_box    = $imagine->create( $empty_text_canvas, $this->bg_color );
+		$this->text_box->draw()->text( $this->text, $this->font, new Point( 0, 0 ) );
 	}
 
 	/**
