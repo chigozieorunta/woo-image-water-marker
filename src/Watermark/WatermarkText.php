@@ -105,8 +105,8 @@ class WatermarkText {
 	public function set_colors(): void {
 		// Set colors.
 		$palette        = new RGB();
-		$this->bg_color = $palette->color( '#B3B3B3', 100 );
-		$this->tx_color = $palette->color( '#FFFFFF', 100 );
+		$this->bg_color = $palette->color( apply_filters( 'wiwm_text_bgcolor', '#B3B3B3' ), 100 );
+		$this->tx_color = $palette->color( apply_filters( 'wiwm_text_txcolor', '#FFFFFF' ), 100 );
 	}
 
 	/**
