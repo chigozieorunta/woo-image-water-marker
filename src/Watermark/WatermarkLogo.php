@@ -30,6 +30,20 @@ class WatermarkLogo {
 	public Image $logo;
 
 	/**
+	 * Logo's X position.
+	 *
+	 * @var integer
+	 */
+	public int $x = 0;
+
+	/**
+	 * Logo's Y Position.
+	 *
+	 * @var integer
+	 */
+	public int $y = 0;
+
+	/**
 	 * Watermark object.
 	 *
 	 * @var \Watermark
