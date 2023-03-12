@@ -92,8 +92,8 @@ class WatermarkText {
 		// Get SKU or string.
 		$this->text = $text ?: $this->sku;
 
-		// Create canvas and set text position.
-		$this->set_canvas();
+		// Create text box and set position.
+		$this->set_text_box();
 		$this->set_position();
 	}
 
@@ -147,6 +147,6 @@ class WatermarkText {
 		$position   = $image_size->getWidth() - 85;
 
 		// Set text position.
-		$this->image->paste( $this->canvas, new Point( $position, 0 ) );
+		$this->image->paste( $this->text_box, new Point( $position, 0 ) );
 	}
 }
