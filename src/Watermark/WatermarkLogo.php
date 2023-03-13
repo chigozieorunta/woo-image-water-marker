@@ -112,14 +112,23 @@ class WatermarkLogo {
 	}
 
 	/**
-	 * Set Position.
+	 * Resize logo to half of the image width.
 	 *
-	 * @param integer $x X Position.
-	 * @param integer $y Y Position.
 	 * @return void
 	 */
-	public function set_position( int $x, int $y ): void {
-		// Paste to position.
-		$this->image->paste( $this->logo, new Point( $x, $y ) );
+	public function resize_logo(): void {
+		// Get sizes.
+		$logo_size  = $this->logo->getSize();
+		$image_size = $this->image->getSize();
+
+		// Get ratio.
+		$ratio = $logo_size->getWidth() / $logo_size->getHeight();
+
+		// Get new width and height of logo.
+		$new_width  = $image_size->getWidth() / apply_filters( 'wiwm_logo_ratio', 2 );
+		$new_height = $new_width / $ratio;
+
+		// Set new width and height of logo.
+		$this->logo->resize( new Box( apply_filters( 'wiwm_logo_width', $new_width ), apply_filters( 'wiwm_logo_height', $new_height ) ) );
 	}
 }
