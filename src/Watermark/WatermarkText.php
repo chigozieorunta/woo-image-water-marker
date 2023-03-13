@@ -28,9 +28,9 @@ class WatermarkText {
 	/**
 	 * Text box.
 	 *
-	 * @var \Box
+	 * @var \Imagine\Image\ImagineInterface
 	 */
-	public Box $text_box;
+	public $text_box;
 
 	/**
 	 * Image Canvas.
