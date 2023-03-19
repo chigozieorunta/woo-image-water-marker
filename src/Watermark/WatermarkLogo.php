@@ -68,6 +68,11 @@ class WatermarkLogo {
 		$this->set_position();
 	}
 
+	/**
+	 * Set position of logo.
+	 *
+	 * @return void
+	 */
 	public function set_position(): void {
 		// Get Position.
 		list($this->x, $this->y) = $this->get_position();
@@ -76,6 +81,11 @@ class WatermarkLogo {
 		$this->image->paste( $this->logo, new Point( $this->x, $this->y ) );
 	}
 
+	/**
+	 * Get the position to set logo at.
+	 *
+	 * @return array
+	 */
 	public function get_position(): array {
 		// Get sizes of logo and image.
 		$logo_size  = $this->logo->getSize();
