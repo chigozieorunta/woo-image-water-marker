@@ -149,11 +149,43 @@ class WatermarkText {
 		$this->image->paste( $this->text_box, new Point( $this->x, $this->y ) );
 	}
 
-		// Get top right position of image.
-		$image_size = $this->image->getSize();
-		$position   = $image_size->getWidth() - 85;
+	/**
+	 * Get position to set text at.
+	 *
+	 * @return array
+	 */
+	public function get_position(): array {
+		// Get sizes of text and image.
+		$text_size   = $this->text_box->getSize();
+		$image_size  = $this->image->getSize();
+		$coordinates = [];
 
-		// Set text position.
-		$this->image->paste( $this->text_box, new Point( $position, 0 ) );
+		switch ( apply_filters( 'wiwm_text_position', 'top-right' ) ) {
+			case 'top-left':
+				$coordinates[] = 0;
+				$coordinates[] = 0;
+				break;
+
+			case 'top-right':
+				$coordinates[] = ( $image_size->getWidth() - $text_size->getWidth() );
+				$coordinates[] = 0;
+				break;
+
+			case 'bottom-left':
+				$coordinates[] = 0;
+				$coordinates[] = ( $image_size->getHeight() - $text_size->getHeight() );
+				break;
+
+			case 'bottom-right':
+				$coordinates[] = ( $image_size->getWidth() - $text_size->getWidth() );
+				$coordinates[] = ( $image_size->getHeight() - $text_size->getHeight() );
+				break;
+
+			default:
+				$coordinates[] = ( $image_size->getWidth() - $text_size->getWidth() ) / 2;
+				$coordinates[] = ( $image_size->getHeight() - $text_size->getHeight() ) / 2;
+		}
+
+		return apply_filters( 'wiwm_text_position', $coordinates );
 	}
 }
