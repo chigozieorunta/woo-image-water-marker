@@ -142,6 +142,12 @@ class WatermarkText {
 	 * @return void
 	 */
 	public function set_position(): void {
+		// Get Position.
+		list($this->x, $this->y) = $this->get_position();
+
+		// Set Position of logo.
+		$this->image->paste( $this->text_box, new Point( $this->x, $this->y ) );
+
 		// Get top right position of image.
 		$image_size = $this->image->getSize();
 		$position   = $image_size->getWidth() - 85;
