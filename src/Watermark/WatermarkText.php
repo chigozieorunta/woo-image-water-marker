@@ -147,6 +147,7 @@ class WatermarkText {
 
 		// Set Position of logo.
 		$this->image->paste( $this->text_box, new Point( $this->x, $this->y ) );
+	}
 
 		// Get top right position of image.
 		$image_size = $this->image->getSize();
