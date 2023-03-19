@@ -14,7 +14,6 @@ use Imagine\Imagick\Image;
  * WatermarkLogo Class
  */
 class WatermarkLogo {
-
 	/**
 	 * Imagine Object for image.
 	 *
