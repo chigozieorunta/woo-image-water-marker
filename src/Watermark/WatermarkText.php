@@ -102,7 +102,7 @@ class WatermarkText {
 	 *
 	 * @return void
 	 */
-	public function set_colors(): void {
+	private function set_colors(): void {
 		// Set colors.
 		$palette        = new RGB();
 		$this->bg_color = $palette->color( apply_filters( 'wiwm_text_bgcolor', '#B3B3B3' ), 100 );
@@ -114,7 +114,7 @@ class WatermarkText {
 	 *
 	 * @return void
 	 */
-	public function set_font(): void {
+	private function set_font(): void {
 		// Set font.
 		$font_size  = apply_filters( 'wiwm_text_size', 20 );
 		$font_type  = apply_filters( 'wiwm_text_font', __DIR__ . '/../../assets/fonts/AvertaDemo-Regular.otf' );
@@ -126,7 +126,7 @@ class WatermarkText {
 	 *
 	 * @return void
 	 */
-	public function set_text_box(): void {
+	private function set_text_box(): void {
 		// Get Imagine object.
 		$imagine = new Imagine();
 
@@ -141,7 +141,7 @@ class WatermarkText {
 	 *
 	 * @return void
 	 */
-	public function set_position(): void {
+	private function set_position(): void {
 		// Get Position.
 		list($this->x, $this->y) = $this->get_position();
 
@@ -154,7 +154,7 @@ class WatermarkText {
 	 *
 	 * @return array
 	 */
-	public function get_position(): array {
+	private function get_position(): array {
 		// Get sizes of text and image.
 		$text_size   = $this->text_box->getSize();
 		$image_size  = $this->image->getSize();
