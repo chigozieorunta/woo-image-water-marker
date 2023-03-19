@@ -130,8 +130,11 @@ class WatermarkText {
 		// Get Imagine object.
 		$imagine = new Imagine();
 
+		$text_width  = apply_filters( 'wiwm_text_width', 85 );
+		$text_height = apply_filters( 'wiwm_text_height', 35 );
+
 		// Set text box.
-		$empty_text_canvas = new Box( 85, 35 );
+		$empty_text_canvas = new Box( $text_width, $text_height );
 		$this->text_box    = $imagine->create( $empty_text_canvas, $this->bg_color );
 		$this->text_box->draw()->text( $this->text, $this->font, new Point( 0, 0 ) );
 	}
