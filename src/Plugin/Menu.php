@@ -46,7 +46,7 @@ class Menu {
 			Settings::ROLE,
 			Settings::SLUG,
 			false,
-			'dashicons-welcome-learn-more',
+			'dashicons-format-image',
 			99
 		);
 
