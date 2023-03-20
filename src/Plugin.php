@@ -42,6 +42,7 @@ class Plugin {
 	public function run(): void {
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_assets' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'register_admin_assets' ] );
+		add_action( 'admin_menu', [ $this, 'register_menu' ], 9 );
 		$this->register_watermark();
 	}
 
@@ -84,6 +85,20 @@ class Plugin {
 			$assets->admin_init();
 		} catch ( Exception $e ) {
 			wp_die( 'Error: Registering Admin Assets - ' . $e->getMessage() );
+		}
+	}
+
+	/**
+	 * Register Menu.
+	 *
+	 * @return void
+	 */
+	public function register_menu(): void {
+		try {
+			$menu = Plugin\Menu::get_instance();
+			$menu->init();
+		} catch ( Exception $e ) {
+			wp_die( 'Error: Registering Menu - ' . $e->getMessage() );
 		}
 	}
 }
