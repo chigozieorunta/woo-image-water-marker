@@ -7,7 +7,7 @@
 
 namespace WooImageWaterMarker;
 
-use WooImageWaterMarker\Watermark\Watermark;
+use Watermark\Watermark;
 
 /**
  * Plugin Class
