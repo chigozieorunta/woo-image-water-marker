@@ -39,6 +39,8 @@ class Plugin {
 	 * @return void
 	 */
 	public function run(): void {
+		add_action( 'wp_enqueue_scripts', [ $this, 'register_assets' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'register_admin_assets' ] );
 		$watermark = Watermark::get_instance();
 		$watermark->run();
 	}
