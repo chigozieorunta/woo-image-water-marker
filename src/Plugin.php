@@ -55,7 +55,7 @@ class Plugin {
 			$watermark = Watermark::get_instance();
 			$watermark->run();
 		} catch ( Exception $e ) {
-			wp_die( 'Error: Watermark not registering... - ' . $e->getMessage() );
+			wp_die( 'Error: Registering Watermark - ' . $e->getMessage() );
 		}
 	}
 }
