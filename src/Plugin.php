@@ -58,4 +58,18 @@ class Plugin {
 			wp_die( 'Error: Registering Watermark - ' . $e->getMessage() );
 		}
 	}
+
+	/**
+	 * Register Assets.
+	 *
+	 * @return void
+	 */
+	public function register_assets(): void {
+		try {
+			$assets = Plugin\Assets::get_instance();
+			$assets->init();
+		} catch ( Exception $e ) {
+			wp_die( 'Error: Registering Assets - ' . $e->getMessage() );
+		}
+	}
 }
