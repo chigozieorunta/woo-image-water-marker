@@ -7,6 +7,7 @@
 
 namespace WooImageWaterMarker;
 
+use PHPUnit\Exception;
 use WooImageWaterMarker\Watermark\Watermark;
 
 /**
@@ -41,7 +42,20 @@ class Plugin {
 	public function run(): void {
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_assets' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'register_admin_assets' ] );
-		$watermark = Watermark::get_instance();
-		$watermark->run();
+		$this->register_watermark();
+	}
+
+	/**
+	 * Register Watermark.
+	 *
+	 * @return void
+	 */
+	public function register_watermark(): void {
+		try {
+			$watermark = Watermark::get_instance();
+			$watermark->run();
+		} catch ( Exception $e ) {
+			wp_die( 'Error: Watermark not registering... - ' . $e->getMessage() );
+		}
 	}
 }
