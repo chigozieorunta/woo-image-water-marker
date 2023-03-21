@@ -72,4 +72,18 @@ class Plugin {
 			wp_die( 'Error: Registering Assets - ' . $e->getMessage() );
 		}
 	}
+
+	/**
+	 * Register Admin Assets.
+	 *
+	 * @return void
+	 */
+	public function register_admin_assets(): void {
+		try {
+			$assets = Plugin\Assets::get_instance();
+			$assets->admin_init();
+		} catch ( Exception $e ) {
+			wp_die( 'Error: Registering Admin Assets - ' . $e->getMessage() );
+		}
+	}
 }
