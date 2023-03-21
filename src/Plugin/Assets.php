@@ -7,7 +7,7 @@
 
 namespace WooImageWaterMarker\Plugin;
 
-use Settings;
+use WooImageWaterMarker\Plugin\Settings;
 
 /**
  * Assets Class.
