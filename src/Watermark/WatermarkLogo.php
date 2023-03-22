@@ -78,7 +78,7 @@ class WatermarkLogo {
 	 *
 	 * @return void
 	 */
-	public function set_position(): void {
+	protected function set_position(): void {
 		// Get Position.
 		list($this->x, $this->y) = $this->get_position();
 
