@@ -19,35 +19,35 @@ class WatermarkLogo {
 	 *
 	 * @var \Image
 	 */
-	public Image $image;
+	protected Image $image;
 
 	/**
 	 * Imagine Object for logo.
 	 *
 	 * @var \Image
 	 */
-	public Image $logo;
+	protected Image $logo;
 
 	/**
 	 * Logo's X position.
 	 *
 	 * @var integer
 	 */
-	public int $x = 0;
+	protected int $x = 0;
 
 	/**
 	 * Logo's Y Position.
 	 *
 	 * @var integer
 	 */
-	public int $y = 0;
+	protected int $y = 0;
 
 	/**
 	 * Watermark object.
 	 *
 	 * @var \Watermark
 	 */
-	public $watermark;
+	protected $watermark;
 
 	public function __construct( Watermark $watermark ) {
 		$imagine     = new Imagine();
@@ -86,7 +86,7 @@ class WatermarkLogo {
 	 *
 	 * @return array
 	 */
-	public function get_position(): array {
+	protected function get_position(): array {
 		// Get sizes of logo and image.
 		$logo_size  = $this->logo->getSize();
 		$image_size = $this->image->getSize();
@@ -125,7 +125,7 @@ class WatermarkLogo {
 	 *
 	 * @return void
 	 */
-	public function resize_logo(): void {
+	protected function resize_logo(): void {
 		// Get sizes.
 		$logo_size  = $this->logo->getSize();
 		$image_size = $this->image->getSize();
