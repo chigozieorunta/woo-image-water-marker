@@ -49,6 +49,11 @@ class WatermarkLogo {
 	 */
 	protected $watermark;
 
+	/**
+	 * Logo constructor
+	 *
+	 * @param \Watermark $watermark Watermark instance.
+	 */
 	public function __construct( Watermark $watermark ) {
 		$imagine     = new Imagine();
 		$this->image = $watermark->image;
