@@ -109,7 +109,7 @@ class Watermark {
 	 *
 	 * @return string
 	 */
-	public function get_watermark_image(): string {
+	protected function get_watermark_image(): string {
 		// Create if it doesn't exist.
 		if ( ! file_exists( plugin_dir_path( __DIR__ ) . '../../assets/images/woo-image-water-marker-' . $this->id . '.jpg' ) ) {
 			$this->create_watermark_image();
@@ -126,7 +126,7 @@ class Watermark {
 	 *
 	 * @return void
 	 */
-	public function set_image_absolute_path(): void {
+	protected function set_image_absolute_path(): void {
 		// Get absolute path.
 		$woo_image_url   = wp_get_attachment_url( $this->id );
 		$img_uploads_dir = wp_upload_dir();
@@ -140,7 +140,7 @@ class Watermark {
 	 *
 	 * @return void
 	 */
-	public function set_watermark_image(): void {
+	protected function set_watermark_image(): void {
 		$imagine     = new Imagine();
 		$this->image = $imagine->open( $this->path );
 	}
@@ -150,7 +150,7 @@ class Watermark {
 	 *
 	 * @return void
 	 */
-	public function set_watermark_logo(): void {
+	protected function set_watermark_logo(): void {
 		// Check if Image path exists.
 		if ( ! $this->path ) {
 			return;
@@ -166,7 +166,7 @@ class Watermark {
 	 *
 	 * @return void
 	 */
-	public function set_watermark_sku(): void {
+	protected function set_watermark_sku(): void {
 		// Check if Product SKU exists.
 		if ( ! $this->sku ) {
 			return;
@@ -182,7 +182,7 @@ class Watermark {
 	 *
 	 * @return void
 	 */
-	public function create_watermark_image(): void {
+	protected function create_watermark_image(): void {
 		$this->set_image_absolute_path();
 		$this->set_watermark_image();
 		$this->set_watermark_logo();
