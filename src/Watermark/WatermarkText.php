@@ -23,49 +23,49 @@ class WatermarkText {
 	 *
 	 * @var \Font
 	 */
-	public Font $font;
+	protected Font $font;
 
 	/**
 	 * Text box.
 	 *
 	 * @var \Imagine\Image\ImagineInterface
 	 */
-	public $text_box;
+	protected $text_box;
 
 	/**
 	 * Image Canvas.
 	 *
 	 * @var \Image
 	 */
-	public Image $image;
+	protected Image $image;
 
 	/**
 	 * Background color.
 	 *
 	 * @var string
 	 */
-	public $bg_color;
+	protected $bg_color;
 
 	/**
 	 * Text color.
 	 *
 	 * @var string
 	 */
-	public $tx_color;
+	protected $tx_color;
 
 	/**
 	 * WC Product SKU.
 	 *
 	 * @var string
 	 */
-	public string $sku;
+	protected string $sku;
 
 	/**
 	 * Text String.
 	 *
 	 * @var string
 	 */
-	public string $text;
+	protected string $text;
 
 	/**
 	 * Text constructor
@@ -102,7 +102,7 @@ class WatermarkText {
 	 *
 	 * @return void
 	 */
-	private function set_colors(): void {
+	protected function set_colors(): void {
 		// Set colors.
 		$palette        = new RGB();
 		$this->bg_color = $palette->color( apply_filters( 'wiwm_text_bgcolor', '#B3B3B3' ), 100 );
@@ -114,7 +114,7 @@ class WatermarkText {
 	 *
 	 * @return void
 	 */
-	private function set_font(): void {
+	protected function set_font(): void {
 		// Set font.
 		$font_size  = apply_filters( 'wiwm_text_size', 20 );
 		$font_type  = apply_filters( 'wiwm_text_font', __DIR__ . '/../../assets/fonts/AvertaDemo-Regular.otf' );
@@ -126,7 +126,7 @@ class WatermarkText {
 	 *
 	 * @return void
 	 */
-	private function set_text_box(): void {
+	protected function set_text_box(): void {
 		// Get Imagine object.
 		$imagine = new Imagine();
 
@@ -144,7 +144,7 @@ class WatermarkText {
 	 *
 	 * @return void
 	 */
-	private function set_position(): void {
+	protected function set_position(): void {
 		// Get Position.
 		list($this->x, $this->y) = $this->get_position();
 
@@ -157,7 +157,7 @@ class WatermarkText {
 	 *
 	 * @return array
 	 */
-	private function get_position(): array {
+	protected function get_position(): array {
 		// Get sizes of text and image.
 		$text_size   = $this->text_box->getSize();
 		$image_size  = $this->image->getSize();
