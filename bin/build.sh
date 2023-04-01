@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the name of your plugin file
-PLUGIN_FILE="quizzo.php"
+PLUGIN_FILE="woo-image-water-marker.php"
 
 # Set the name of the build directory
 BUILD_DIR="build"
@@ -12,6 +12,9 @@ SRC_DIRS="assets languages src"
 # Create the build directory if it doesn't exist
 if [ ! -d "$BUILD_DIR" ]; then
   mkdir "$BUILD_DIR"
+else
+  rm -r "$BUILD_DIR"
+	mkdir "$BUILD_DIR"
 fi
 
 # Copy the source directories and plugin files to the build directory
