@@ -3,3 +3,4 @@ node_modules/
 vendor/
 assets/images/woo*
 .phpunit.result.cache
+build
